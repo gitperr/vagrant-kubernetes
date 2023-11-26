@@ -15,5 +15,8 @@ because some of the original code did not work for me properly.
 ## Known issues
 1. Worker node cannot join the cluster because of the network interface not coming up quickly. There is a dirty fix for this:  
 you can ssh into the master node `vagrant ssh master` and ping the problematic host `ping worker1.example.com`. Then, it magically comes up for some reason.
-> Fix for this was to change the master's IP address from .100 ending to something else
-> because .100 ending seems to be reserved for the Oracle VMBox's DHCP server.
+> :bulb: Real fix for this was to change the master's IP address from .100 ending
+>  to something else because .100 ending seems to be reserved for the Oracle VMBox's DHCP server.
+> You can check on your own like so:
+> cd "C:\Program Files\Oracle\VirtualBox\"
+> VBoxManage list dhcpservers
