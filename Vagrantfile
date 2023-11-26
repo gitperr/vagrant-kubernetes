@@ -33,7 +33,6 @@ Vagrant.configure("2") do |config|
         worker.vm.box = BASE_BOX_IMAGE
         worker.vm.hostname = "worker#{i}.example.com"
         worker.vm.network "private_network", ip: "192.168.56.10#{i}"
-        worker.vm.network "public_network", ip: "192.168.0.20#{i}"
         worker.vm.provider "virtualbox" do |vb|
           vb.name = "worker#{i}"
           vb.cpus = CPUS_WORKER
