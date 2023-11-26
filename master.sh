@@ -3,7 +3,7 @@
 
 kubeadm config images pull
 
-sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=master.example.com --apiserver-advertise-address=192.168.56.100
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --control-plane-endpoint=master.example.com --apiserver-advertise-address=192.168.56.105
 
 sleep 10
 # Configure kubeconfig for the master

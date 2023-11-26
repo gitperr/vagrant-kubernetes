@@ -1,1 +1,1 @@
-kubeadm join master.example.com:6443 --token wgjjfl.ry4vv0dkiacpsnxc --discovery-token-ca-cert-hash sha256:c1adb3f78feebc0e9f684a30f6b003cae8bb782cb3c17faacb3e76be8c42d1ae 
+kubeadm join master.example.com:6443 --token 1ak07h.2h8qnixrtv5r4j4h --discovery-token-ca-cert-hash sha256:b166bb593b77513d8c359b332f4fac5cd7d2de41dff9d73219684c15746a9d11 
