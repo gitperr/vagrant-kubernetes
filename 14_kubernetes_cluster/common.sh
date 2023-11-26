@@ -53,7 +53,7 @@ sudo apt -y update
 sudo apt-get install -y containerd docker.io
 
 
-sudo tee  /etc/docker/daemon.json <<EOF
+sudo tee /etc/docker/daemon.json <<EOF
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
   "log-driver": "json-file",
@@ -68,8 +68,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker vagrant
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname
--s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo chown vagrant /var/run/docker.sock
 
@@ -94,7 +93,9 @@ sudo apt-get update
 
 # 7. Installing kubelet, kubeadm, and kubectl
 
-sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+# Seems like unnecessary step
+# sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+
 sudo apt-get install -y kubelet=1.27.3-00 kubeadm=1.27.3-00 kubectl=1.27.3-00
 sudo apt-mark hold kubelet kubeadm kubectl
 
